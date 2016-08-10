@@ -7,8 +7,15 @@ within head is title, within body are headers and paragraph>
 
 
 	<head>
+	    <script>
+	      function myFunction() {
+	        var words = document.getElementById("welcome");
+	        words.innerHTML = "Thanks for visiting!";
+	      }
+	    </script>
 		<meta charset="utf-8">
         <title>My Website</title>
+        <!Here is our CSS>
         <link rel="stylesheet" type="text/css" href="mystyle.css">
 
 		<!woops didn't have tags! Hello World!>
@@ -17,18 +24,23 @@ within head is title, within body are headers and paragraph>
 
 
 
-	<body style = "background-color:powderblue; font-size:300%; text-align:center;">
+	<body >
 
 		<!images are the only tags that don't have closing tags >
  		
+
+    	<h1 id="welcome">Welcome to my page!</h1>
+    	<! Here is our javascript>
+    	<button id="btn" onclick="myFunction()">Click me!</button>
 
 		<p>
 			<h1> Meow to the World and to the Universe </h1>
 			<a href = "https://www.instagram.com/p/8v_ph9KgpJ/?taken-by=simonsinek&hl=en"> At The Whitney </a>
 			<br>
-			<img src = thorichka.jpg style="width:304px;height:228px;" data-rotate="90">  </img>
+			<img class = "floating" src = tm.JPG > </img>
 			<br>
 			<h2> My <em> favorite </em> site <strong> is </strong> always <a href== "kitties.com" > kitties.com </a> </h2>
+			<a href="more_cats.html">Cat Images</a> is a link to a page on this website.
 		</p>
 
 
@@ -46,7 +58,7 @@ within head is title, within body are headers and paragraph>
  		<pre>
 	 		<h1> Kittens are great because <br> they don't talk back. </h1>
 	 		<center>	
-	 		<img src = kittycup.jpg> 
+	 		<img src = bowl.jpg > 
 	 	</center>
  		</pre>
 
