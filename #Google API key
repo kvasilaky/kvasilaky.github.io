@@ -1,0 +1,25 @@
+pip install -U googlemaps
+
+https://developers.google.com/maps/documentation/directions/get-api-key#get-an-api-key
+#Google API key
+#AIzaSyAoVzvhvGLryf1St_SVoiS7tWDnU3xxIJQ
+
+#API key
+AIzaSyBhuwhl3o9fbSAr3KLgwEsd1XX4EAb74aA
+
+#Browser key
+AIzaSyDPTGgqQxbp_gFxI1oj8dl45pL8rmv_eQw
+
+#test link with my new key
+https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood4&key=AIzaSyBhuwhl3o9fbSAr3KLgwEsd1XX4EAb74aA
+
+#now go to this page
+https://developers.google.com/maps/documentation/directions/start
+
+
+#client libraries
+https://developers.google.com/maps/web-services/client-library
+
+
+#example with javascript
+https://developers.google.com/maps/documentation/javascript/

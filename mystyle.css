@@ -1,17 +1,24 @@
-h1, h2, p {
+h2, p {
     text-align: center;
     color: blue;
 }
 
+#link {
+<a href = "google.com">  </a>
+
+}
+
+
+}
 body {
 	border: 1px solid black;
 	style = "background-color:powderblue; 
 	font-size:300%; 
-	text-align:center;"
+	text-align:center;
 }
 
 	
-.floating img { 
+img.floating { 
 	float: left; 
 	width:128px;
 	height:128px;

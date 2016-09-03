@@ -1,93 +1,209 @@
-<!this will be commented out>
-
-<!everything is wrapped in html, then it's head and body
-within head is title, within body are headers and paragraph>
-
+<!DOCTYPE html>
 <html lang="en">
 
+<head>
 
-	<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-		<meta charset="utf-8">
-        <title>My Website</title>
-        <!Here is our CSS>
-        <link rel = "stylesheet" href = "mystyle.css">
-        <script type = "text/javascript" src = "functions.js" ></script>
-		<!woops didn't have tags! Hello World!>
+    <title>4 Col Portfolio - Start Bootstrap Template</title>
 
-	<style>
-      #map {
-        width: 100%;
-        height: 400px;
-      }
-    </style>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-	</head>
+    <!-- Custom CSS -->
+    <link href="css/4-col-portfolio.css" rel="stylesheet">
 
-	<body >
-		<button onclick="myFunction()"> Click me! </button>
-		<!images are the only tags that don't have closing tags >
- 		
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    	<h1 id="welcome">Welcome to my page!</h1>
-    	<! Here is our javascript>
-    	
+</head>
 
-		<p>
-			<h1> Meow to the World and to the Universe </h1>
-			<a href = "https://www.instagram.com/p/8v_ph9KgpJ/?taken-by=simonsinek&hl=en"> At The Whitney </a>
-			<br>
-			<a href = "portfolio.html"> Test Page</a>
-			<img src = tm.JPG > </img>
-			<br>
-			<h2> My <em> favorite </em> site <strong> is </strong> always <a href== "kitties.com" > kitties.com </a> </h2>
-			<a href="more_cats.html"> Cat Images</a> is a link to a page on this website.
-		</p>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Minnie and Thori's Page
+                    <small>Adventures Big and Small</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+
+             <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="ukraine.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="minnieyoung.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="sylphide.jpg" alt="">
+                </a>
+            </div>
 
 
- 		<!this puts in a break>	
- 		<br>  </br>
-
- 		 
-
- 		<!This put a  line on the page>	
- 		<hr> <h1> More on kittens...</h1> </hr>
-
- 	
-
- 		<!this fixes the text to courier>
- 		<pre>
-	 		<h1> Kittens are great because <br> they don't talk back. </h1>
-	 		<center>	
-	 		<img class = "floating" src = bowl.jpg > 
-	 	</center>
- 		</pre>
+            <div class="col-md-3 portfolio-item">
+                 <a href="#">
+                    <img class="img-responsive" src="bed.jpg" alt="">
+                </a>
+                
+            </div>
 
 
- 		<p>
- 			<!Notice that colors and html references describe the style or the href inside the first tag>
-		 	<h1 style = "color:red;"> Note that kittens are never red </h1>
- 		</p>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-3 portfolio-item">
+
+                <iframe width="250" height="350" src="https://www.youtube.com/embed/APsvPGs4ntk" > </iframe>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                
+                    <iframe width="250" height="350" src="https://www.youtube.com/embed/0_0BB27hMYw" > </iframe>
+            </div>
+            <div class="col-md-3 portfolio-item">
+               <iframe width="250" height="350" src="https://www.youtube.com/embed/CDWi44_HV8Y" > </iframe>
+
+            </div>
+            <div class="col-md-3 portfolio-item">
+                 <iframe width="250" height="350" src="https://www.youtube.com/embed/v0a18T-iT6o" > </iframe>
+            </div>
 
 
+        </div>
+        <!-- /.row -->
 
- 		<! Map>
-	 	<h3>My Google Maps Demo</h3>
-	    <div id="map"></div>
-	    <script>
-	      function initMap() {
-	        var mapDiv = document.getElementById('map');
-	        var map = new google.maps.Map(mapDiv, {
-	            center: {lat: 44.540, lng: -78.546},
-	            zoom: 8
-	        });
-	      }
-	    </script>
-	    <script async defer
-	        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhuwhl3o9fbSAr3KLgwEsd1XX4EAb74aA&callback=initMap">
-	    </script>
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-3 portfolio-item">
 
+                
+                <iframe width="250" height="350" src="https://www.youtube.com/embed/UNL-eyDlXFY" > </iframe>
+            </div>
 
-	</body>
+            <div class="col-md-3 portfolio-item">
+                
+                <iframe width="250" height="350" src="https://www.youtube.com/embed/ZWuy_B0UEH0" > </iframe>
+            </div>
+            <div class="col-md-3 portfolio-item">   
+                <iframe width="250" height="350" src="https://www.youtube.com/embed/f2uEPGzH6PE" > </iframe>
+
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="Torie.JPG" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; K Vasilaky 2016</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
 
 </html>
