@@ -2,9 +2,9 @@
 
 body {
 	background-color:#FFFFFF;
-	margin:10px;
+	margin:2px;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
-	font-size:11px;
+	font-size:12px;
 	color:#000000;
 	
 
@@ -23,7 +23,7 @@ textarea,input,submit {
 	color:#666666;
 	padding:5px;
 	border:none;
-	margin:3px;
+	margin:2px;
 }
 
 h1 {
@@ -55,7 +55,7 @@ h1 {
 
 
 #container {
-	width:600px;
+	width:800px;
 	margin:0 auto 0 auto;
 }
 
@@ -104,7 +104,7 @@ h1 {
 
 
 #content {
-	margin-right:220px;
+	margin-right:120px;
 	padding-right:20px;
 	border-right:1px solid #cccccc;
 	background-image:url(images/backgrounds/content.jpg);
