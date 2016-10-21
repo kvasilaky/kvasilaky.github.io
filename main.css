@@ -103,10 +103,10 @@ h1 {
 
 
 br {
-   display: block;
-   margin: 10px 0;
+     display: block; /* makes it have a width */
+     content: ""; /* clears default height */
+     margin-top: 0; /* change this to whatever height you want it */
 }
-
 #content {
 	margin-right:120px;
 	padding-right:20px;
