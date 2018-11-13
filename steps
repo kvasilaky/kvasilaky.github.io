@@ -1,0 +1,94 @@
+
+Deploying to heroku
+
+
+Check out: 
+https://devcenter.heroku.com/articles/getting-started-with-python#deploy-the-app
+http://www.vertabelo.com/blog/technical-articles/web-app-development-with-flask-sqlalchemy-bootstrap-part-3
+
+----------------
+#New Additions
+----------------
+
+- Add database scripts to create the tables
+- Add procfile (web: gunicorn Form:app) #it's module name followed by app instance name
+- Add a runtime.txt file so that heroku is using python 3.5.2 #https://devcenter.heroku.com/articles/python-runtimes
+- Add a .config file # you will be adding the heroku/amazon database url to this config file
+
+---------------------------
+#Changes to existing files
+---------------------------
+
+- Make sure .config is now imported into database_helper.py
+- Comment out the ports in the run.py
+
+- Set up your heroku account online
+- Pip install the heroku belt
+- Login to heroku from terminal
+$ heroku login
+- Set up your git account
+- Push the app's code to git
+- Make sure the webhooks in git settings are turned on
+
+---------------
+#Setup the app 
+---------------
+
+- Create your heroku app, cd into your directory with the app
+heroku create #this assigns a name to the website 
+- Connect heroku to git repo on the site, so that git pushes automatically deploy
+- Git remote add the git repo
+#http://stackoverflow.com/questions/17366006/fatal-remote-heroku-already-exists
+$ git remote add heroku git@heroku.com:anotherformdeployed.git
+- Check where you're pushing code to (git and heroku)
+$ git remote -v
+ 
+---------------
+#Setup the DB 
+---------------
+
+- Add heroku postgres manually or heroku addons:create heroku-postgresql
+- Get the url to the postgres -> go to the settings page (go here: https://postgres.heroku.com/databases/)
+- Pay attention to what that the link is called on heroku, & make sure it's called the same thing in ` DB_URL = os.environ["DATABASE_URL"] ` of the config file 
+- Make sure postgres is installed 
+brew install postgres
+- All the scripts we created should be in ../scripts/
+- Spin up the database tables to that remote db using:
+$ psql  POSTGRESURL < ../scripts/NAMEOFSCRIPT.pgsql
+
+
+-------
+#Deploy
+-------
+
+- Deploy the app, it will never work the first time
+ $ git push heroku master
+- check your logs for errors
+$ heroku logs
+
+
+-------------
+#Extra notes: 
+-------------
+In database helper you needed to add config for the config vars, and psycopg2.extras is its own module
+	import psycopg2.extras
+	from .config import *
+
+If you're running this locally you will need to type the following at the command line
+$ export DB_URL="postgres://wseppejjqnjtvi:hJwl5G1b5a7dqLHNDWwtVCwrFg@ec2-23-21-193-140.compute-1.amazonaws.com:5432/d8j1gb5nb1v2o7"
+
+In the Procfile, the name of the module is Form, followed by app (before you had it as anotherformcopy)
+	web: gunicorn Form:app
+
+Get rid of any dependencies in your requirements file that you don't need
+
+Don't do this if you're not working in a virutal env specific to this app. It will require every package you for python by app
+$pip freeze > requirements.txt
+
+
+
+
+
+
+
+
