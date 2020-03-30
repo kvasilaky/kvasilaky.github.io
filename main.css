@@ -29,7 +29,7 @@ textarea,input,submit {
 h1 {
 	font-family:Georgia, "Times New Roman", Times, serif;
 	font-size:200%;
-	color:#000000;
+	color:#005b96;
 	font-weight:normal;
 }
 
@@ -120,7 +120,7 @@ br {
 	font-family:"Trebuchet MS", Arial, Verdana;
 	text-align:left;
 	font-size:150%;
-	color:#0183E5;
+	color:#6497b1;
 	border-bottom:1px dashed #eeeeee;
 	padding-top:15px !important;
 	padding-top:0;
