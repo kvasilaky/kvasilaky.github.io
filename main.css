@@ -13,35 +13,19 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.side-box {
-    width: 250px; /* Adjust the width as needed */
-    border: 1px solid #ccc; /* Light grey border */
-    padding: 15px;
-    margin-top: 20px;
-    background-color: #f9f9f9; /* Light grey background */
+/* Assuming your Latest Updates section has a class "latest-updates" */
+.latest-updates {
+    margin-left: 0; /* Adjust as needed to align with the bio section */
+    padding-left: 0; /* Adjust if there is any padding that should be removed */
 }
 
-.side-box h2 {
-    color: #333; /* Dark grey color for the heading */
-    border-bottom: 1px solid #ddd; /* Light grey bottom border for the heading */
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+.latest-updates p,
+.latest-updates ul,
+.latest-updates li {
+    line-height: 1; /* This sets the line height to single space */
+    margin-bottom: 0; /* Removes bottom margin to tighten up spacing */
 }
 
-.side-box ul {
-    list-style-type: none; /* Remove default list styling */
-    padding: 0;
-    margin: 0;
-}
-
-.side-box ul li {
-    padding: 5px 0;
-    border-bottom: 1px solid #eee; /* Very light grey bottom border for list items */
-}
-
-.side-box ul li:last-child {
-    border-bottom: none; /* Remove bottom border for the last item */
-}
 
 a {
 	color:#999999;
