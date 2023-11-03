@@ -7,7 +7,40 @@ body {
 	font-size:11.5px;
 	color:#000000;
 	
+}
 
+body {
+    font-family: Arial, sans-serif;
+}
+
+.side-box {
+    width: 250px; /* Adjust the width as needed */
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #f9f9f9; /* Light grey background */
+}
+
+.side-box h2 {
+    color: #333; /* Dark grey color for the heading */
+    border-bottom: 1px solid #ddd; /* Light grey bottom border for the heading */
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.side-box ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+.side-box ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee; /* Very light grey bottom border for list items */
+}
+
+.side-box ul li:last-child {
+    border-bottom: none; /* Remove bottom border for the last item */
 }
 
 a {
