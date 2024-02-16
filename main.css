@@ -146,6 +146,7 @@ br {
 }
 
 #content p {
+	font-size:13.5px;
 	line-height:20px;
 	text-indent:0px;
 	color:#666;
