@@ -1,0 +1,427 @@
+/*!
+ * Start Bootstrap - Resume (Customized)
+ * Improved readability & academic layout
+ */
+
+/* =====================
+   BASE
+===================== */
+
+body {
+  font-family: 'Open Sans', serif;
+  padding-top: 54px;
+  color: #495057;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 0;
+    padding-left: 17rem;
+  }
+}
+
+/* =====================
+   HEADINGS
+===================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Saira Extra Condensed', serif;
+  font-weight: 700;
+  color: #343a40;
+  letter-spacing: 0.04em;
+}
+
+h1 {
+  font-size: 5.5rem;
+  line-height: 5rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+  margin-bottom: 2.5rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+h4 {
+  font-size: 1.3rem;
+  text-transform: none; /* 🔴 clave: evita fatiga visual */
+}
+
+h5 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: none;
+}
+
+/* =====================
+   SUBHEADINGS
+===================== */
+
+.subheading {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #6c757d;
+}
+
+.subheading-custom {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+
+/* =====================
+   RESUME SECTIONS
+===================== */
+
+section.resume-section {
+  border-bottom: 3px solid #e9ecef;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  section.resume-section {
+    min-height: 100vh;
+  }
+}
+
+@media (min-width: 992px) {
+  section.resume-section {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+}
+
+/* =====================
+   CUSTOM BLOCKS (NEW)
+===================== */
+
+.resume-block {
+  margin-bottom: 3.5rem;
+}
+
+.block-title {
+  font-size: 1.9rem;
+  border-bottom: 2px solid #001138;
+  padding-bottom: 0.4rem;
+  margin-bottom: 2rem;
+}
+
+.sub-block-title {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
+  color: #343a40;
+}
+
+/* =====================
+   TEACHING ITEMS
+===================== */
+
+.teaching-item {
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1.1rem;
+  border-left: 4px solid #001138;
+  background-color: #fdfdfd;
+  transition: background-color 0.2s ease;
+}
+
+.teaching-item:hover {
+  background-color: #f8f9fa;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.item-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.item-title a {
+  text-decoration: none;
+}
+
+.item-title a:hover {
+  text-decoration: underline;
+}
+
+.item-date {
+  font-size: 0.9rem;
+  color: #001138;
+  white-space: nowrap;
+}
+
+.item-meta {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin-top: 0.25rem;
+}
+
+.item-details {
+  margin-top: 0.4rem;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+}
+
+/* =====================
+   LINKS & COLORS
+===================== */
+
+a {
+  color: #001138;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #824027;
+}
+
+.text-primary {
+  color: #001138 !important;
+}
+
+.bg-primary {
+  background-color: #001138 !important;
+}
+
+/* =====================
+   SIDENAV (UNCHANGED, REFINED)
+===================== */
+
+#sideNav .navbar-nav .nav-item .nav-link {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 992px) {
+  #sideNav {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 17rem;
+    height: 100vh;
+  }
+
+  #sideNav .navbar-brand {
+    display: flex;
+    margin: auto auto 0;
+    padding: .5rem;
+  }
+
+  #sideNav .navbar-brand .img-profile {
+    max-width: 10rem;
+    max-height: 10rem;
+    border: .5rem solid rgba(255,255,255,.2);
+  }
+
+  #sideNav .navbar-collapse {
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 0;
+    width: 100%;
+    margin-bottom: auto;
+  }
+
+  #sideNav .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+/* =====================
+   ICONS
+===================== */
+
+.list-social-icons a {
+  color: #495057;
+}
+
+.list-social-icons a:hover {
+  color: #001138;
+}
+
+.list-social-icons a .fa-lg {
+  font-size: 1.6rem;
+}
+
+.list-icons {
+  font-size: 2.8rem;
+}
+
+.list-icons .list-inline-item i:hover {
+  color: #001138;
+}
+/* =====================
+   MEDIA & PUBLICATIONS
+===================== */
+
+.media-item {
+  margin-bottom: 3rem;
+}
+
+.media-meta {
+  font-size: 0.85rem;
+  color: #868e96;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.media-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #495057;
+  margin-bottom: 1rem;
+}
+
+/* Button – académico y sobrio */
+.media-btn {
+  display: inline-block;
+  padding: 0.45rem 1.4rem;
+  border: 1px solid #001138;
+  border-radius: 2px;
+  color: #001138;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.media-btn:hover {
+  background-color: #001138;
+  color: #ffffff;
+}
+
+/* =====================
+   PDF / PRINT FRIENDLY
+===================== */
+
+@media print {
+  .media-btn {
+    border: none;
+    padding: 0;
+    color: #000;
+    font-size: 0.9rem;
+  }
+
+  .media-btn::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75rem;
+    color: #555;
+  }
+}
+/* =====================
+   CV LISTS
+===================== */
+
+.section-subtitle {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: #343a40;
+}
+
+.cv-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cv-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.cv-meta {
+  color: #868e96;
+  font-size: 0.85rem;
+  margin-left: 0.25rem;
+}
+
+.cv-paragraph {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.1rem;
+}
+
+/* =====================
+   PRINT / PDF
+===================== */
+
+@media print {
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75rem;
+    color: #555;
+  }
+}
+.photo-container {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.field-photo {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+
+/* Imagen de perfil grande, centrada y responsive */
+.img-profile {
+  width: 200px !important;
+  height: 200px !important;
+  max-width: none !important;
+  max-height: none !important;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%; /* manteniendo circular */
+  border: 0.5rem solid rgba(255,255,255,0.2); /* igual que antes */
+}
+
+.cv-special-link {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    background: rgba(231, 76, 60, 0.1) !important;
+    border-radius: 10px !important;
+    margin: 5px 10px !important;
+    border-left: 4px solid #ffffff !important;
+}
+
+.cv-special-link:hover {
+    background: rgba(231, 76, 60, 0.2) !important;
+    color: #fff2f1 !important;
+}
+
+.cv-text {
+    position: relative;
+}
