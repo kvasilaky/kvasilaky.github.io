@@ -226,7 +226,7 @@
     }
     </style>
 
-    <title>Katya Vasilaky - Associate Professor of Economics</title>
+    <title>Kathryn Vasilaky - Associate Professor of Economics</title>
 
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -262,10 +262,10 @@
             <a class="nav-link tab-link" href="#" data-tab="Research">Research</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link tab-link" href="#" data-tab="grants-fieldwork">Grants & Field Experience</a>
+            <a class="nav-link tab-link" href="#" data-tab="Grants-fieldwork">Grants & Field Experience</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link tab-link" href="#" data-tab="teaching">Teaching</a>
+            <a class="nav-link tab-link" href="#" data-tab="Teaching">Teaching</a>
           </li>
           <li class="nav-item">
             <a class="nav-link tab-link" href="#" data-tab="CV">CV</a>
@@ -586,7 +586,7 @@
     </div>
   </section>
 </div>
-<div class="tab-pane" id="grants-fieldwork" role="tabpanel">
+<div class="tab-pane" id="Grants-fieldwork" role="tabpanel">
   <section class="resume-section p-3 p-lg-5 d-flex flex-column">
     <div class="my-auto">
       <h2 class="mb-5">Grants & Field Experience</h2>
@@ -713,7 +713,7 @@
   </section>
 </div>
 
-<div class="tab-pane" id="teaching" role="tabpanel">
+<div class="tab-pane" id="Teaching" role="tabpanel">
   <section class="resume-section p-3 p-lg-5">
     <div class="my-auto">
       <h2 class="mb-5 section-title">Teaching Experience</h2>
@@ -831,115 +831,81 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <script src="js/resume.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('Script de pestañas cargado (sin hash)');
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log('Script de pestañas cargado');
+  const validTabs = ['Bio', 'Research', 'Grants-fieldwork', 'teaching'];
 
-        function switchTab(tabId) {
-          console.log('Cambiando a pestaña:', tabId);
+  function switchTab(tabId, push = true) {
+    console.log('Cambiando a pestaña:', tabId);
 
-          document.querySelectorAll('.tab-pane').forEach(tab => {
-            tab.classList.remove('active');
-            tab.style.display = 'none';
-          });
+    // Ocultar todas las pestañas
+    document.querySelectorAll('.tab-pane').forEach(tab => {
+      tab.classList.remove('active');
+      tab.style.display = 'none';
+    });
 
-          const activeTab = document.getElementById(tabId);
-          if (activeTab) {
-            activeTab.classList.add('active');
-            activeTab.style.display = 'block';
-            console.log('Pestaña encontrada y activada:', tabId);
-          } else {
-            console.error('Pestaña no encontrada:', tabId);
-          }
+    // Mostrar pestaña activa
+    const activeTab = document.getElementById(tabId);
+    if (activeTab) {
+      activeTab.classList.add('active');
+      activeTab.style.display = 'block';
+    } else {
+      console.error('Pestaña no encontrada:', tabId);
+      return;
+    }
 
-          document.querySelectorAll('.tab-link').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('data-tab') === tabId) {
-              link.classList.add('active');
-            }
-          });
+    // Activar enlaces del menú
+    document.querySelectorAll('.tab-link').forEach(link => {
+      link.classList.toggle(
+        'active',
+        link.getAttribute('data-tab') === tabId
+      );
+    });
 
-          document.querySelectorAll('.main-tabs .nav-link').forEach(link => {
-            link.classList.remove('active');
-            const tabTarget = link.getAttribute('data-tab-target');
-            if (tabTarget === tabId) {
-              link.classList.add('active');
-            }
-          });
+    // Cambiar URL SIN #
+    if (push) {
+      history.pushState({ tab: tabId }, '', '/' + tabId);
+    }
+  }
 
-          if (history.pushState) {
-            history.pushState(null, null, '#' + tabId);
-          } else {
-            window.location.hash = '#' + tabId;
-          }
-        }
+  // Click en menú
+  document.querySelectorAll('.tab-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const tabId = this.getAttribute('data-tab');
+      if (validTabs.includes(tabId)) {
+        switchTab(tabId);
+      }
+    });
+  });
 
-        document.querySelectorAll('.tab-link').forEach(link => {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            const tabId = this.getAttribute('data-tab');
-            console.log('Clic en sidebar, tabId:', tabId);
-            if (tabId) {
-              switchTab(tabId);
-            }
-          });
-        });
+  // Inicializar según URL
+  function initializeTab() {
+    const path = window.location.pathname.replace('/', '');
 
-        document.querySelectorAll('.main-tabs .nav-link').forEach(link => {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            const tabId = this.getAttribute('data-tab-target');
-            console.log('Clic en pestaña horizontal, tabId:', tabId);
-            if (tabId) {
-              switchTab(tabId);
-            }
-          });
-        });
+    if (validTabs.includes(path)) {
+      switchTab(path, false);
+    } else {
+      switchTab('Bio', false);
+      history.replaceState({ tab: 'Bio' }, '', '/Bio');
+    }
+  }
 
-        function initializeTab() {
-          document.querySelectorAll('.tab-pane').forEach(tab => {
-            if (tab.id !== 'Bio') {
-              tab.style.display = 'none';
-              tab.classList.remove('active');
-            }
-          });
+  // Navegación atrás / adelante
+  window.addEventListener('popstate', function (e) {
+    if (e.state && e.state.tab) {
+      switchTab(e.state.tab, false);
+    }
+  });
 
-          const bioTab = document.getElementById('Bio');
-          if (bioTab) {
-            bioTab.style.display = 'block';
-            bioTab.classList.add('active');
-          }
+  initializeTab();
 
-          const hash = window.location.hash.substring(1);
-          const validTabs = ['Bio', 'Research', 'grants-fieldwork', 'teaching'];
-
-          if (hash && validTabs.includes(hash)) {
-            setTimeout(() => {
-              switchTab(hash);
-            }, 100);
-          } else {
-            switchTab('Bio');
-          }
-        }
-
-        initializeTab();
-
-        window.addEventListener('popstate', function() {
-          const hash = window.location.hash.substring(1);
-          const validTabs = ['Bio', 'Research', 'grants-fieldwork', 'teaching'];
-          if (validTabs.includes(hash)) {
-            switchTab(hash);
-          }
-        });
-
-        console.log('Número de pestañas encontradas:', document.querySelectorAll('.tab-pane').length);
-        console.log('Número de enlaces de sidebar:', document.querySelectorAll('.tab-link').length);
-        console.log('Número de botones de pestañas:', document.querySelectorAll('.main-tabs .nav-link').length);
-      });
-    </script>
+  console.log('Número de pestañas:', document.querySelectorAll('.tab-pane').length);
+});
+</script>
 
   </body>
 
