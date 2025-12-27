@@ -833,77 +833,76 @@
     <script src="js/resume.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('Script de pestañas cargado (sin hash)');
+  console.log('Script de pestañas cargado (Modo Hash Routing para GitHub Pages)');
 
-  const validTabs = ['Bio', 'Research', 'Grants-fieldwork', 'Teaching', 'CV'];
+  // Mapeo directo de hash → ID de sección
+  const routes = {
+    'Bio': 'Bio',
+    'Research': 'Research',
+    'Grants-fieldwork': 'Grants-fieldwork',
+    'Teaching': 'Teaching',
+    'CV': 'CV'
+  };
 
-  function switchTab(tabId, push = true) {
-    console.log('Cambiando a pestaña:', tabId);
+  function switchTab() {
+    // 1. Obtener hash actual (ej: #/Research)
+    const hash = window.location.hash;
 
-    // Ocultar todas las pestañas
+    // 2. Limpiar hash para obtener clave (quitar '#/')
+    const path = hash.replace(/^#\//, '');
+
+    // 3. Determinar ID de sección a mostrar, por defecto 'Bio'
+    const sectionId = routes[path] || 'Bio';
+
+    console.log('Navegando a la sección:', sectionId);
+
+    // 4. Ocultar todas las pestañas
     document.querySelectorAll('.tab-pane').forEach(tab => {
       tab.classList.remove('active');
       tab.style.display = 'none';
     });
 
-    // Mostrar pestaña activa
-    const activeTab = document.getElementById(tabId);
+    // 5. Mostrar la pestaña activa
+    const activeTab = document.getElementById(sectionId);
     if (activeTab) {
       activeTab.classList.add('active');
       activeTab.style.display = 'block';
     } else {
-      console.error('Pestaña no encontrada:', tabId);
-      return;
+      console.error('No se encontró el elemento con ID:', sectionId);
     }
 
-    // Activar enlaces del menú
+    // 6. Activar visualmente el enlace correcto en el menú
     document.querySelectorAll('.tab-link').forEach(link => {
       link.classList.toggle(
         'active',
-        link.getAttribute('data-tab') === tabId
+        link.dataset.tab === sectionId
       );
     });
 
-    // Cambiar URL SIN #
-    if (push) {
-      history.pushState({ tab: tabId }, '', '/' + tabId);
+    // 7. Si no hay hash, redirigir automáticamente a #/Bio
+    if (!hash || hash === '') {
+      window.location.hash = '/Bio';
     }
   }
 
-  // Click en menú
+  // 8. Asignar clic a los enlaces del menú para cambiar hash
   document.querySelectorAll('.tab-link').forEach(link => {
     link.addEventListener('click', function (e) {
       e.preventDefault();
-      e.stopPropagation();
-      const tabId = this.getAttribute('data-tab');
-      if (validTabs.includes(tabId)) {
-        switchTab(tabId);
+      const tabId = this.dataset.tab;
+      if (tabId) {
+        window.location.hash = '/' + tabId;
       }
     });
   });
 
-  // Inicializar según URL
-  function initializeTab() {
-    const path = window.location.pathname.replace('/', '');
+  // 9. Escuchar cambios en el hash (back / forward)
+  window.addEventListener('hashchange', switchTab);
 
-    if (validTabs.includes(path)) {
-      switchTab(path, false);
-    } else {
-      switchTab('Bio', false);
-      history.replaceState({ tab: 'Bio' }, '', '/Bio');
-    }
-  }
+  // 10. Inicializar al cargar la página
+  switchTab();
 
-  // Navegación atrás / adelante
-  window.addEventListener('popstate', function (e) {
-    if (e.state && e.state.tab) {
-      switchTab(e.state.tab, false);
-    }
-  });
-
-  initializeTab();
-
-  console.log('Número de pestañas:', document.querySelectorAll('.tab-pane').length);
+  console.log('Sistema de rutas inicializado. Secciones detectadas:', Object.keys(routes).length);
 });
 </script>
 
