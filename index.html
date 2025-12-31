@@ -233,6 +233,28 @@
   object-position: center; /* crop from the center */
   display: block;
 }
+
+/* 1) kill default browser whitespace */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 2) if your theme added top padding for a fixed nav, remove it */
+body {
+  padding-top: 0 !important;
+}
+
+/* 3) if it’s coming from the first heading’s top margin */
+main h1:first-child,
+main h2:first-child,
+section h1:first-child,
+section h2:first-child {
+  margin-top: 0;
+}
+
+
+      
     </style>
 
     <title>Kathryn Vasilaky - Associate Professor of Economics</title>
